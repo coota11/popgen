@@ -1,0 +1,25 @@
+// Turns on trial and error mode.
+trial: on
+
+// Creates reincarnation sites, each with 6 braves.
+rsgen: blue, 6, brave
+rsgen: red, 6, brave
+rsgen: yellow, 6, brave
+rsgen: green, 6, brave
+
+// Creates huts around RSs.
+build: red, 0, 0, 7, 0, 1, 1
+build: yellow, 0, 0, 3, 0, 1, 1
+build: green, 0, 0, 0, 0, 1, 1
+
+// Creates vaults of knowledge 30 tiles or more away from RSs.
+head: vault, 1, 1, 25, spell, lightning, 30
+head: vault, 1, 1, 25, building, tower, 30
+head: vault, 1, 1, 25, building, firewarrior_hut, 30
+
+// Creates a stone head giving either hypnotise, tornado or swamp.
+head: stone, 3, 4, 25, spell, rnd(hypnotise/tornado/swamp)
+
+// Generates trees and wildies, both at 1.5% of land.
+trees: 1.5
+wildies: 1.5

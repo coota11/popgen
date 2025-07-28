@@ -1,0 +1,27 @@
+// Turns off trial and error mode.
+trial: off
+
+// Creates islands.
+select: 64, 64, 72, 72
+island: rnd(5-10), ragged, rnd(40-50), 100
+select:
+island: rnd(20-30), blob, rnd(5-10), rnd(200-400), land
+
+// Creates lakes.
+{
+	island: rnd(10-15), ragged, rnd(6-12), 0, all_land
+	smooth: 2, despike
+}
+
+smooth: 2
+bump: 5, -80, 80
+
+// Creates plateaus.
+{
+	island: rnd(10-20), ragged, rnd(10-20), rnd(800-1000), all_land
+	smooth: 2, despike
+	smooth: 2
+	bump: 5, -100, 100
+}
+
+bump: 1, -30, 30

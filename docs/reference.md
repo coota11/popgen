@@ -1,0 +1,302 @@
+## Syntax
+
+```
+// Any parameters are omissible.
+[Command]: [Parameter], ...
+
+{
+    // Commands can be grouped into a separate layer by enclosing them in curly
+    // braces. The commands run only on the layer of their group.
+}
+```
+
+## Reference
+
+- Command
+    - Parameter (Min-Max, Default)
+        - Value: Description
+
+## Commands
+
+- Trial
+    - Enabled (0-1, 0)
+        - 0: Off
+        - 1: On
+- Select
+    - X (0-127, 0)
+    - Y (0-127, 0)
+    - W (0-128, 128)
+    - H (0-128, 128)
+    - Angle in Degrees (0.0-360.0, 0.0)
+- Fill
+    - Height (0-1024, 0)
+- Island
+    - Number (0-1000, 1)
+    - Type (0-1, 0)
+        - 0: Blob
+        - 1: Ragged
+    - Size (0-128, 0)
+    - Height (0-1024, 0)
+    - Area (0-5, 0)
+        - 0: Anywhere
+        - 1: Water
+        - 2: Land
+        - 3: Anywhere (All)
+        - 4: Water (All)
+        - 5: Land (All)
+- Smooth
+    - Repeat (0-1000, 1)
+    - Mode (0-2, 0)
+        - 0: Normal
+        - 1: Cliff Preserving
+        - 2: Spike Removal
+- Bump
+    - Size (0.0-128.0, 0.0)
+    - Min Delta Height (-1024-1024, 0)
+    - Max Delta Height (-1024-1024, 0)
+- RSGen
+    - Tribe (N/A-N/A, 0)
+    - Followers (0-8, 0)
+    - Follower Model (1-8, 1)
+    - Min Distance from RSs (0-64, 30)
+- Build
+    - Tribe (N/A-N/A, 0)
+    - Small (0-64, 0)
+    - Medium (0-64, 0)
+    - Large (0-64, 0)
+    - Towers (0-64, 0)
+    - Warrior (0-64, 0)
+    - Temples (0-64, 0)
+    - Fireworrior (0-64, 0)
+    - Spy (0-64, 0)
+    - Boat (0-64, 0)
+    - Balloon (0-64, 0)
+    - Max Distance from RS (0-64, 15)
+- Head
+    - Trigger (0-5, 0)
+    - Occurrences (-1-120, 1)
+    - Followers (0-32000, 1)
+    - Seconds (0.0-250.0, 0.0)
+    - Discovery Type (N/A-N/A, 11)
+    - Discovery Model (N/A-N/A, 2)
+    - Min Distance from Heads (0-64, 20)
+    - Min Distance from RSs (0-64, 15)
+- Object
+    - Number (0-2000, 1)
+    - Model (N/A-N/A, 2)
+    - Type (N/A-N/A, 1)
+    - Tribe (N/A-N/A, 0)
+    - Area (0-2, 0)
+        - 0: Anywhere
+        - 1: Water
+        - 2: Land
+- Trees
+    - Percentage of Land (0.0-100.0, 0.0)
+    - Tree 1's Ratio (0.0-N/A, 1.0)
+    - Tree 2's Ratio (0.0-N/A, 1.0)
+    - Tree 3's Ratio (0.0-N/A, 1.0)
+    - Max Distance from Water (0-256, 256)
+- Wildies
+    - Percentage of Land (0.0-100.0, 0.0)
+    - Max Distance from Water (0-256, 256)
+- Marker
+    - Number (0-256, 1)
+    - Area (0-2, 0)
+        - 0: Anywhere
+        - 1: Water
+        - 2: Land
+
+## Functions/Variables/Constants
+
+| Name             | Description                                             |
+|------------------|---------------------------------------------------------|
+| Rnd([Min]-[Max]) | Returns a random value within a specified range.        |
+| Rnd([1]/[2]/...) | Returns a random value from specified values.           |
+| LastX/LastY      | The X/Y coordinate of the last generated island/object. |
+| Off/On           | = 0/1, respectively.                                    |
+
+## Parameter Specific Constants
+
+- Island
+    - Type
+        - Blob
+        - Ragged
+- Smooth
+    - Mode
+        - Preserve
+        - Despike
+- Area
+    - Water
+    - Land
+    - All
+    - All_Water
+    - All_Land
+- Tribe
+    - Neutral
+    - Blue
+    - Red
+    - Yellow
+    - Green
+- Type
+    - Follower
+    - Building
+    - Creature
+    - Vehicle
+    - Scenery
+    - General
+    - Effect
+    - Spell
+- Model
+    - Follower
+        - Wildman
+        - Brave
+        - Warrior
+        - Preacher
+        - Spy
+        - Firewarrior
+        - Shaman
+    - Building
+        - Small_Hut
+        - Medium_Hut
+        - Large_Hut
+        - Tower
+        - Temple
+        - Spy_Hut
+        - Warrior_Hut
+        - Firewarrior_Hut
+        - Boat_Hut
+        - Balloon_Hut
+        - Prison
+    - Creature
+        - Eagle
+    - Vehicle
+        - Boat
+        - Balloon
+    - Scenery
+        - Tree_1
+        - Tree_2
+        - Tree_3
+        - Plant_1
+        - Plant_2
+    - General
+        - Building_Add_On
+    - Effect
+        - Effect_Simple_Blast
+        - Effect_Sprite_Circles
+        - Effect_Smoke
+        - Effect_Lightning_Elem
+        - Effect_Burn_Cell_Obstacles
+        - Effect_Flatten_Land
+        - Effect_Move_Rs_Pillar
+        - Effect_Prepare_Rs_Land
+        - Effect_Sphere_Explode
+        - Effect_Fireball
+        - Effect_Firecloud
+        - Effect_Ghost_Army
+        - Effect_Invisibility
+        - Effect_Explode_Bldg_Partial
+        - Effect_Volcano
+        - Effect_Hypnotism
+        - Effect_Lightning_Bolt
+        - Effect_Swamp
+        - Effect_Angel_of_Death
+        - Effect_Tornado
+        - Effect_Swarm
+        - Effect_Firestorm
+        - Effect_Erosion
+        - Effect_Landbridge
+        - Effect_Wrath_of_God
+        - Effect_Earthquake
+        - Effect_Fly_Thingummy
+        - Effect_Sphere_Explode_And_Fire
+        - Effect_Big_Fire
+        - Effect_Lightning
+        - Effect_Flatten
+        - Effect_General
+        - Effect_Shape_Sparkle
+        - Effect_Lava_Flow
+        - Effect_Volcano_Explosions
+        - Effect_Purify_Land
+        - Effect_Unpurify_Land
+        - Effect_Explosion_1
+        - Effect_Explosion_2
+        - Effect_Lava_Square
+        - Effect_Ww_Element
+        - Effect_Lightning_Strand
+        - Effect_Ww_Dust
+        - Effect_Raise_Land
+        - Effect_Lower_Land
+        - Effect_Hill
+        - Effect_Valley
+        - Effect_Place_Tree
+        - Effect_Rise
+        - Effect_Dip
+        - Effect_Rein_Rock_Debris
+        - Effect_Clear_Mapwho
+        - Effect_Place_Shaman
+        - Effect_Place_Wild
+        - Effect_Bldg_Smoke
+        - Effect_Much_Simpler_Blast
+        - Effect_Tumbling_Branch
+        - Effect_Conversion_Flash
+        - Effect_Hypnosis_Flash
+        - Effect_Sparkle
+        - Effect_Small_Sparkle
+        - Effect_Explosion_3
+        - Effect_Rock_Explosion
+        - Effect_Lava_Gloop
+        - Effect_Splash_6
+        - Effect_Smoke_Cloud
+        - Effect_Smoke_Cloud_Constant
+        - Effect_Fireball_2
+        - Effect_Ground_Shockwave
+        - Effect_Orbiter
+        - Effect_Big_Sparkle
+        - Effect_Meteor
+        - Effect_Convert_Wild
+        - Effect_Bldg_Smoke_2_Full
+        - Effect_Bldg_Smoke_2_Partial
+        - Effect_Bldg_Damaged_Smoke
+        - Effect_Delete_Rs_Pillars
+        - Effect_Spell_Blast
+        - Effect_Firestorm_Smoke
+        - Effect_Player_Dead
+        - Effect_Reveal_Fog_Area
+        - Effect_Shield
+        - Effect_Boat_Hut_Repair
+        - Effect_Reedy_Grass
+        - Effect_Swamp_Mist
+        - Effect_Armageddon
+        - Effect_Bloodlust
+        - Effect_Teleport
+        - Effect_Atlantis_Set
+        - Effect_Atlantis_Invoke
+        - Effect_Statue_To_AoD
+        - Effect_Fill_One_Shot
+        - Effect_Fire_Roll_Elem
+    - Spell
+        - Blast
+        - Lightning
+        - Tornado
+        - Swarm
+        - Invisibility
+        - Hypnotise
+        - Firestorm
+        - Ghost_Army
+        - Erode
+        - Swamp
+        - Landbridge
+        - Angel_of_Death
+        - Earthquake
+        - Flatten
+        - Volcano
+        - Convert
+        - Armageddon
+        - Magical_Shield
+        - Bloodlust
+        - Teleport
+    - Trigger
+        - Stone
+        - Obelisk
+        - Vault
+        - Gargoyle
