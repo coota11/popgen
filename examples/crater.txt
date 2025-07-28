@@ -1,0 +1,11 @@
+// Turns on trial and error mode.
+trial: on
+
+// Creates a crater.
+island: 1, blob, 11, 1024, land
+select: lastx, lasty, 1, 1
+island: 1, blob, 5, 1
+select: lastx, lasty, 11, 11
+smooth: 2
+select: lastx, lasty, 1, 1
+island: 1, blob, 3, rnd(0-1)
